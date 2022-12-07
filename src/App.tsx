@@ -18,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        こんにちは、{process.env.REACT_APP_YOUR_NAME} です
       </header>
     </div>
   );

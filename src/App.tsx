@@ -1,8 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { atom, useRecoilValue } from "recoil";
+
+const yourName = atom({ key: "yourName", default: "aaa" });
 
 function App() {
+  const name = useRecoilValue(yourName);
   return (
     <div className="App">
       <header className="App-header">
@@ -18,7 +22,7 @@ function App() {
         >
           Learn React
         </a>
-        こんにちは、{process.env.REACT_APP_YOUR_NAME} です
+        こんにちは{name}さん、{process.env.REACT_APP_YOUR_NAME} です
       </header>
     </div>
   );
